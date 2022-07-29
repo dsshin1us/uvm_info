@@ -13,7 +13,7 @@ Objective
 3. Control its instantiation
 
 **Implementation in Systemverilog**
-```verilog
+```systemverilog
     class Singleton;
         protected static Singleton  m_self;                     // Local static instance
 
@@ -31,7 +31,7 @@ Objective
 ```
 
 **Examples in UVM**
-```verilog
+```systemverilog
     // Singletons in the UVM
     //  + uvm_coreservice_t
     //  + uvm_factory
