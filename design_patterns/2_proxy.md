@@ -18,7 +18,7 @@ Objective
 
 ###Design Issue
 Given such classes:
-```verilog 
+```systemverilog
         class Parent;
         ...
         class OlderChild;
@@ -46,7 +46,7 @@ class OlderChild {
 ```
 
 If we wanted to modify Parent... 
-```verilog
+```systemverilog
     class AdoptedParent extends Parent;
 ```
 
@@ -76,7 +76,7 @@ So we use ***PROXY*** in lieu of these Objects
 
 ### Implementation in SystemVerilog
 
-```verilog
+```systemverilog
 virtual class Proxy #(type T);
     pure virtual function T create();
 ...
@@ -107,7 +107,7 @@ end
 
 ## Implementation in UVM
 ### Proxy
-```verilog
+```systemverilog
     // Our Proxy in base/uvm_factory.svh
     virtual class uvm_object_wrapper;
         virtual function uvm_object         create_object( ... );
