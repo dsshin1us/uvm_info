@@ -80,12 +80,13 @@ So we use ***PROXY*** in lieu of these Objects
 virtual class Proxy #(type T);
     pure virtual function T create();
 ...
+endclass : Proxy
  class Wrapper #(type T) extends Proxy #(T);
     virtual function T create();
         T h = new();
         return h;
     endfunction : create
-endclass
+endclass : Wrapper
 
 // FACTORY will be explained later...
 Proxy       factory[string];                        // create a factory
