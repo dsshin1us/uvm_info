@@ -123,11 +123,43 @@ Which has 3 main parts:
    
 ----
 
-#### QUICK QUESTION: What is the difference between uvm_object::create() vs uvm_object_wrapper::create_object()
-- [**uvm_object_wrapper**]  - Proxy (*uvm_object_registry*) implements ***create_object*** to create object of a specfic type
-- [**uvm_object**] - m_uvm_object_create_func(T) appends create common method, but we do not use it directly.
-  - We call uvm_object_registry#(T,T)::create() ....... or rather ..... type_id::create()
-    - which gets factory context and call uvm_factory::create_component_by_type() method.
+#### QUICK QUESTION: What is the difference between uvm_object::create() vs uvm_object_wrapper::create_object() usage?
+**uvm_object_wrapper::create_object( ... )**
+> Proxy (*uvm_object_registry*) implements ***create_object*** to create object of a specfic type
+
+**uvm_object::create( ... )**
+> m_uvm_object_create_func(T) appends create common method, but we do not use it directly.
+>  - We call uvm_object_registry#(T,T)::create() .... aka .... "type_id::create()"
+>  - which gets factory handle and call uvm_factory::create_component_by_type() method.
+
+---
+
+### When we call T::type_id::create()
+```mermaid
+sequenceDiagram
+    participant uvm_object_registry
+    participant uvm_default_factory
+    participant uvm_object_wrapper
+    participant uvm_object
+    uvm_object_registry->>uvm_default_factory: create_object_by_type()
+    uvm_default_factory->>uvm_object_wrapper: create_object()
+    uvm_object_wrapper-->>uvm_object_registry: create_object()
+    uvm_object_registry->>uvm_object: new()
+```
+> dashed line denotes implementation.  uvm_object_registry implements create_object()
+
+
+### So when does T.create() get called?
+
+```systemverilog
+    function uvm_object uvm_object::clone();
+        uvm_object tmp;
+        tmp = this.create( get_name() );
+        ...
+    endfunction
+```
+
+
 
 ---
 #### VERY ODD CODING STYLE
