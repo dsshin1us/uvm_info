@@ -1,7 +1,7 @@
-# Proxy Design Pattern
+# Proxy Pattern
 
 Design Pattern Type
-: Creational [^1]
+: Structural [^1]
 
 Also described as
 : Wrapper
@@ -81,14 +81,14 @@ virtual class Proxy #(type T);
     pure virtual function T create();
 ...
 endclass : Proxy
- class Wrapper #(type T) extends Proxy #(T);
+class Wrapper #(type T) extends Proxy #(T);
     virtual function T create();
         T h = new();
         return h;
     endfunction : create
 endclass : Wrapper
 
-// FACTORY will be explained later...
+// See Factory Method pattern for additional detail
 Proxy       factory[string];                        // create a factory
 Wrapper #(Parent)           p = new;
 Wrapper #(AdoptedParent)    ap = new;
