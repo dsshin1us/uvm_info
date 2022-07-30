@@ -10,3 +10,4 @@ Much love. [see more](https://memegenerator.net/img/instances/86386968/or-a-deep
 ### Design Patterns
 - [Singleton Pattern](design_patterns/1_singleton.md)
 - [Proxy Pattern](design_patterns/2_proxy.md)
+- [Factory Method Pattern](design_patterns/3_factory.md)
