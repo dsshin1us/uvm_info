@@ -1,4 +1,4 @@
-# Sequence Hierachy : uvm_transaction
+# Sequence Hierachy : uvm_sequence_item
 
 ## Class Hierarchy
 
