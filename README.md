@@ -11,3 +11,9 @@ Much love. [see more](https://memegenerator.net/img/instances/86386968/or-a-deep
 - [Singleton Pattern](design_patterns/1_singleton.md)
 - [Proxy Pattern](design_patterns/2_proxy.md)
 - [Factory Method Pattern](design_patterns/3_factory.md)
+- [Observer Pattern](design_patterns/4_observer.md)
+- [Visitor Pattern (uvm_visitor)]
+
+## Sequence Hiearchy
+- [uvm_transaction class](sequence/transaction.md)
+- [uvm_sequence_item class](sequence/sequence_item.md)
