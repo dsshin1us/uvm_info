@@ -47,10 +47,10 @@ sequenceDiagram
         uvm_sequencer_base --> uvm_sequencer_base: arb_sequence_q.push_back( req_s )
         
         Note right of uvm_sequencer_base: m_wait_for_arbitration_completed()
-        critical implementation
+        
             uvm_driver ->> uvm_sequencer_base: get_next_item()
             uvm_sequencer_base --> uvm_sequencer_base: m_select_sequence()
-        end
+        
 
         uvm_sequence_base -->> uvm_sequencer_base: begin_child_tr()
         uvm_sequence_base --> uvm_sequence_base: pre_do(1)
