@@ -80,9 +80,7 @@ sequenceDiagram
         uvm_sequence_base ->> uvm_sequencer_base: send_request()
         uvm_sequence_base ->> uvm_sequencer_base: wait_for_item_done()
         Note right of uvm_sequencer_base : wait_for_item_done()
-        critical implementation
-            uvm_driver ->> uvm_sequencer_base: item_done()
-        end
+        uvm_driver ->> uvm_sequencer_base: item_done()
         uvm_sequence_base -->> uvm_sequencer_base: end_tr()
         uvm_sequence_base --> uvm_sequence_base: post_do()
 ```
