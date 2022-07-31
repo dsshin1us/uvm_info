@@ -15,11 +15,6 @@ uvm_sequence_base --|> uvm_sequence
 - Adds Hiearchy (depth/parent/root/path)
 - Adds Default Sequencer
 - Adds Sequence Info
-> 1. Sequence ID        with its GET/SET methods
-> 2. Item Context       
-> 3. Sequence Info      with its GET/SET methods
-> 4. Default Sequencer  with its GET/SET method
-> 5. Depth/Parent/Root/Path
 
 ----
 
