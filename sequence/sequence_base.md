@@ -45,8 +45,9 @@ sequenceDiagram
         uvm_sequencer_base --> uvm_sequencer_base: m_register_sequence( seq_ptr )
         uvm_sequencer_base --> uvm_sequencer_base: req_s = new()
         uvm_sequencer_base --> uvm_sequencer_base: arb_sequence_q.push_back( req_s )
-        critical
-            Note right of uvm_sequencer_base: m_wait_for_arbitration_completed()
+        
+        Note right of uvm_sequencer_base: m_wait_for_arbitration_completed()
+        critical implementation
             uvm_driver ->> uvm_sequencer_base: get_next_item()
             uvm_sequencer_base --> uvm_sequencer_base: m_select_sequence()
         end
@@ -78,8 +79,8 @@ sequenceDiagram
         uvm_sequence_base --> uvm_sequence_base: mid_do()
         uvm_sequence_base ->> uvm_sequencer_base: send_request()
         uvm_sequence_base ->> uvm_sequencer_base: wait_for_item_done()
-        critical
-            Note right of uvm_sequencer_base : wait_for_item_done()
+        Note right of uvm_sequencer_base : wait_for_item_done()
+        critical implementation
             uvm_driver ->> uvm_sequencer_base: item_done()
         end
         uvm_sequence_base -->> uvm_sequencer_base: end_tr()
