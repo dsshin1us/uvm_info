@@ -17,3 +17,4 @@ Much love. [see more](https://memegenerator.net/img/instances/86386968/or-a-deep
 ## Sequence Hiearchy
 - [uvm_transaction class](sequence/transaction.md)
 - [uvm_sequence_item class](sequence/sequence_item.md)
+- [uvm_sequence_base class](sequence/sequence_base.md)
