@@ -18,3 +18,7 @@ Much love. [see more](https://memegenerator.net/img/instances/86386968/or-a-deep
 - [uvm_transaction class](sequence/transaction.md)
 - [uvm_sequence_item class](sequence/sequence_item.md)
 - [uvm_sequence_base class](sequence/sequence_base.md)
+- [uvm_sequence class](sequence/sequence.md)
+
+## Sequencer
+- [uvm_sequencer class](sequencer/sequencer.md)

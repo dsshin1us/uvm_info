@@ -1,6 +1,6 @@
 # Sequence Hierachy : uvm_transaction
 
-##  1. <a name='ClassHierarchy'></a>Class Hierarchy
+##  Class Hierarchy
 
 ```mermaid
 classDiagram
@@ -10,7 +10,7 @@ uvm_sequence_item --|> uvm_sequence_base
 uvm_sequence_base --|> uvm_sequence
 ```
 
-##  2. <a name='UVMTransaction'></a>UVM Transaction
+##  UVM Transaction
 Adds onto the UVM Object the following
 > 1. Transaction ID     with its GET/SET methods
 > 2. Initiator          with its GET/SET methods
@@ -19,7 +19,7 @@ Adds onto the UVM Object the following
 
 ----
 
-###  2.1. <a name='ImportantProperties'></a>Important Properties
+###  Important Properties
 
 ```systemverilog
     local integer       m_transaction_id = -1;      // This one tracks the transaction for completion
@@ -29,7 +29,7 @@ Adds onto the UVM Object the following
     local time          end_time=-1;                // Debuggability.  set when uvm_sequence_item::finish_item() is called
 ```
 
-###  2.2. <a name='Events'></a>Events
+###  Events
 
 ```systemverilog
     uvm_event_pool      events;                     // dictionary : uvm_pool #( uvm_event #(uvm_object) )
@@ -41,9 +41,9 @@ Adds onto the UVM Object the following
     uvm_event           end_event;                  // assigned "end" event from above dictionary
 ```
 
-####  2.2.1. <a name='uvm_pool'></a>uvm_pool
+####  uvm_pool
 > Dynamic Associate Array
 
-####  2.2.2. <a name='uvm_event'></a>uvm_event
+####  uvm_event
 > SV event (m_event) wrapper with support for callbacks
 

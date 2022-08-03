@@ -25,7 +25,7 @@ Generally begins with start_item and finish_item
 
 
 
-### This is what Start Item looks like
+### This is what start_item() looks like
 ```mermaid
 sequenceDiagram
     participant uvm_sequence_base
@@ -56,6 +56,8 @@ sequenceDiagram
         uvm_sequence_base --> uvm_sequence_base: pre_do(1)
 ```
 
+### [1] set_item_context()
+- Because we are not pushing via sequencer, we need to make sure we have a sequencer.
 
 ### [2] wait_for_grant() details
 1. Register sequence into ***reg_sequences*** associative array
@@ -68,7 +70,7 @@ sequenceDiagram
 - wait for another update  (until the size of above array changes)
 
 
-### This is what Finish Item looks like
+### This is what finish_item() looks like
 ```mermaid
 sequenceDiagram
     participant uvm_sequence_base
